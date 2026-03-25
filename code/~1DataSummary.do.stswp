@@ -81,15 +81,28 @@ by gender : sum adjleave_school adjleave_sem
 		bar(1, color(navy))
 				
 		
-//Treatment Assignments Continuity Test
-/*Parental Income Real Wage based*/
-	clear all
-	cd "E:\2023-2025 UofG MRes Economics\2024-2025\Dissertation\Data"
-	import excel "CPI1965-2019.xlsx", sheet("Sheet1") firstrow clear
-	rename year enter_year
-	save CPI_temp.dta, replace
-	use DataGOSM.dta, clear
-	merge m:1 enter_year using CPI_temp.dta
+// Treatment Assignments Continuity Test
+/* Parental Income Real Wage based */
+
+    * 1. CPI 데이터 처리 (Raw -> Temp)
+    clear all
+    * [수정] 기존 E드라이브 경로 대신 $raw 변수 사용
+    import excel "$raw/CPI1965-2019.xlsx", sheet("Sheet1") firstrow clear
+    
+    rename year enter_year
+    
+    * [수정] 임시 파일은 $clean 폴더에 저장 (나중에 지워도 되는 파일들)
+    save "$clean/CPI_temp.dta", replace
+
+    * 2. 메인 데이터 불러오기 및 병합
+    * [수정] 이전 단계(Setting.do)에서 저장했던 데이터를 clean 폴더에서 가져옴
+    use "$clean/DataGOSM.dta", clear
+    
+    * [수정] 저장했던 임시 파일을 불러와서 병합
+    merge m:1 enter_year using "$clean/CPI_temp.dta"
+    
+    * 병합 결과 확인 (옵션)
+    tab _merge
 	
 	gen income_mid = .
 	replace income_mid = 0.5 if parent_income == 1
