@@ -1,0 +1,6 @@
+data/raw/*.dta
+data/raw/*.csv
+*.log
+*.smcl
+*.aux
+*.pdf
