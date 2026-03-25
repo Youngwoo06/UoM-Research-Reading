@@ -10,13 +10,24 @@ set more off
 capture log close
 
 * please change the path to "E:" if I work my personal laptop
-cd "D:/2025-2028 UoM PhD Economics/2025-2026 Course work/Research Reading/Coding"
+global project "D:/2025-2028 UoM PhD Economics/2025-2026 Course work/Research Reading/Coding"
 
-* Set Globals
-global raw     "data/raw"
-global clean   "data/clean"
-global code    "code"
-global tables  "output/tables"
-global figures "output/figures"
+global raw     "$project/data/raw"
+global clean   "$project/data/clean"
+global code    "$project/code"
+global tables  "$project/output/tables"
+global figures "$project/output/figures"
 
-display "Project environment is successfully set up!"
+cd "$project"
+
+* 실행 순서 (파일 이름이 실제와 같은지 확인하세요)
+do "$code/0Setting.do"
+    display "Setting.do completed successfully!"
+do "$code/0Tuition_Grant.do"
+    display "Tuition_Grant.do completed successfully!"
+do "$code/1DataSummary.do"
+    display "DataSummary.do completed successfully!"
+do "$code/2Regression_RobustRDD.do"
+    display "Regression_RobustRDD.do completed successfully!"
+
+display "All do-files executed successfully!"
