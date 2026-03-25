@@ -1,9 +1,16 @@
 cls
-//Data Summary
 clear all
-cd "E:\2023-2025 UofG MRes Economics\2024-2025\Dissertation\Data"
 
-import excel "E:\2023-2025 UofG MRes Economics\2024-2025\Dissertation\Data\Tuition_Grant.xlsx", sheet("Sheet1") firstrow clear
+* [안전장치] 경로 설정 확인
+if "$project" == "" {
+    global project "D:/2025-2028 UoM PhD Economics/2025-2026 Course work/Research Reading/Coding"
+    global raw     "$project/data/raw"
+    global output  "$project/output"
+}
+
+* 1. 데이터 불러오기 (Raw 폴더에서 가져오기)
+import excel "$raw/Tuition_Grant.xlsx", sheet("Sheet1") firstrow clear
+
 
 // Tuition Increase Cap //
 /*Cap*/
@@ -12,6 +19,7 @@ twoway ///
 	xline(2011) ///
 	ytitle(`"Tuition Increase Cap (%)"') xtitle(`"Year"')
 
+graph export "$output/figures/Tuition_Increase_Cap.png", replace
 // --------------------------------------------------------- //
 
 // Tutition //
@@ -36,6 +44,8 @@ twoway ///
 	label(4 Capital) label(5 Local)) ///
 	ytitle("Tuition (in million KRW, nominal terms)") xtitle("Year") ///
 	xlabel(2009(2)2025)
+
+graph export "$output/figures/Tuition_nominal_terms.png", replace	
 
 
 /*Tuition in Real Terms*/
@@ -66,12 +76,23 @@ twoway ///
 	label(4 Capital) label(5 Local)) ///
 	ytitle("Tuition (in million KRW, real terms)") xtitle("Year") ///
 	xlabel(2009(2)2025)
+	
+graph export "$output/figures/Tuition_real_terms.png", replace	
+
 // --------------------------------------------------------- //
 
 // Korean National Scholarship Program //
 cls
 clear all
-import excel "E:\2023-2025 UofG MRes Economics\2024-2025\Dissertation\Data\Tuition_Grant.xlsx", sheet("Sheet4") firstrow 
+
+* [안전장치] 상위 경로가 설정되지 않았을 경우를 대비
+if "$raw" == "" {
+    global project "D:/2025-2028 UoM PhD Economics/2025-2026 Course work/Research Reading/Coding"
+    global raw     "$project/data/raw"
+}
+
+* [수정] 표준 경로($raw)를 사용하여 Sheet4를 불러옵니다.
+import excel "$raw/Tuition_Grant.xlsx", sheet("Sheet4") firstrow clear
 
 /*Grant Trend*/
 tset Year
@@ -96,6 +117,9 @@ twoway ///
 	ytitle(`"Grants (in trillion KRW, nominal terms)"') xtitle(`"Year"') ///
 	xlabel(2009(1)2019)
 
+graph export "$output/figures/Grants_nominal_terms.png", replace	
+	
+	
 * Real Terms	
 gen RTotal = Total/CPI_base2020 *100
 gen Rtype1 = type1/CPI_base2020 *100
@@ -117,4 +141,4 @@ twoway ///
 	ytitle(`"Grants (in trillion KRW, real terms)"') xtitle(`"Year"') ///
 	xlabel(2009(1)2019)	
 	
-
+graph export "$output/figures/Grants_real_terms.png", replace	

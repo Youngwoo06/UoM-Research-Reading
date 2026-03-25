@@ -23,7 +23,7 @@ cd "$project"
 * 실행 순서 (파일 이름이 실제와 같은지 확인하세요)
 do "$code/0Setting.do"
     display "Setting.do completed successfully!"
-do "$code/0Tuition_Grant.do"
+do "$code/1Tuition_Grant.do"
     display "Tuition_Grant.do completed successfully!"
 do "$code/1DataSummary.do"
     display "DataSummary.do completed successfully!"
