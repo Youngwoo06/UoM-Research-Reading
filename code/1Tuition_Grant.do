@@ -116,8 +116,7 @@ twoway ///
 	label(5 Future-Dream) label(6 Hope-Dream)) ///
 	ytitle(`"Grants (in trillion KRW, nominal terms)"') xtitle(`"Year"') ///
 	xlabel(2009(1)2019)
-
-graph export "$output/figures/Grants_nominal_terms.png", replace	
+	graph export "$output/figures/Grants_nominal_terms.png", replace	
 	
 	
 * Real Terms	
@@ -140,5 +139,4 @@ twoway ///
 	label(5 Future-Dream) label(6 Hope-Dream)) ///
 	ytitle(`"Grants (in trillion KRW, real terms)"') xtitle(`"Year"') ///
 	xlabel(2009(1)2019)	
-	
-graph export "$output/figures/Grants_real_terms.png", replace	
+	graph export "$output/figures/Grants_real_terms.png", replace	
