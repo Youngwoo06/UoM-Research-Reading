@@ -3,13 +3,15 @@ cls
 clear all
 
 if "$project" == "" {
-    display as error "주의: master.do를 먼저 실행하거나 프로젝트 경로를 설정해야 합니다."
-    global project "D:/2025-2028 UoM PhD Economics/2025-2026 Course work/Research Reading/Coding"
+    display "Notice: master.do was not run. Detecting project path automatically..."
+    
+    global project "`c(pwd)'"
+  
     global raw     "$project/data/raw"
     global clean   "$project/data/clean"
 }
 
-/*Check Path before procede*/
+/* Check Path before proceed */
 import excel "$raw/sumGOMS2007-2019.xlsx", sheet("Sheet1") firstrow clear
 
 /*Generate/Edit Variables*/

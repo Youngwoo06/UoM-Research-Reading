@@ -1,7 +1,12 @@
 cls
 //-------------------------Data Summary--------------------------------------//
 clear all
-if "$clean" == "" global clean "D:/2025-2028 UoM PhD Economics/2025-2026 Course work/Research Reading/Coding/data/clean"
+
+if "$project" == "" {
+    global project "`c(pwd)'"
+    global clean   "$project/data/clean"
+    global output  "$project/output"
+}
 
 use "$clean/DataGOSM.dta", clear
 
@@ -15,7 +20,6 @@ use "$clean/DataGOSM.dta", clear
 		ttest `var', by(gender)
 	}
 	
-
 	/*Academic Performance*/
 	count if GPA_raw == . | GPA_raw == -1 | GPA_standard == . | GPA_standard == -1
 	count if GPAZ == .
@@ -74,6 +78,8 @@ by gender : sum adjleave_school adjleave_sem
 	twoway (bar eligible enter_year, barwidth(0.6) color(navy)), ///
 		xline(2012) ///
 		text(1.05 2012 "KNSP implemented")
+	
+	graph export "$output/figures/KNSP_Eligibility.png", replace
 		
 	graph bar (mean) eligible ///
 		if inrange(enter_year, 2008, 2018), ///
@@ -83,26 +89,24 @@ by gender : sum adjleave_school adjleave_sem
 		
 // Treatment Assignments Continuity Test
 /* Parental Income Real Wage based */
-
-    * 1. CPI 데이터 처리 (Raw -> Temp)
-    clear all
-    * [수정] 기존 E드라이브 경로 대신 $raw 변수 사용
-    import excel "$raw/CPI1965-2019.xlsx", sheet("Sheet1") firstrow clear
+clear all
     
+* [확인] CPI 파일이 data/raw 폴더 안에 있어야 합니다.
+import excel "$raw/CPI1965-2019.xlsx", sheet("Sheet1") firstrow clear
     rename year enter_year
     
-    * [수정] 임시 파일은 $clean 폴더에 저장 (나중에 지워도 되는 파일들)
-    save "$clean/CPI_temp.dta", replace
+* [임시 저장] 가공 중인 데이터는 clean 폴더로 보냅니다.
+save "$clean/CPI_temp.dta", replace
 
-    * 2. 메인 데이터 불러오기 및 병합
-    * [수정] 이전 단계(Setting.do)에서 저장했던 데이터를 clean 폴더에서 가져옴
-    use "$clean/DataGOSM.dta", clear
+use "$clean/DataGOSM.dta", clear
     
-    * [수정] 저장했던 임시 파일을 불러와서 병합
     merge m:1 enter_year using "$clean/CPI_temp.dta"
     
-    * 병합 결과 확인 (옵션)
     tab _merge
+    
+    * (선택사항) 병합에 실패한 데이터(_merge != 3)가 있다면 여기서 조치하거나 
+    * 성공한 데이터만 남기고 싶다면: keep if _merge == 3
+    * drop _merge
 	
 	gen income_mid = .
 	replace income_mid = 0.5 if parent_income == 1

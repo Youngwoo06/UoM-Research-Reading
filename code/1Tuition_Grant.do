@@ -1,14 +1,14 @@
 cls
 clear all
 
-* [안전장치] 경로 설정 확인
+* [안전장치] 드라이브 문자 없이 현재 위치 자동 파악
 if "$project" == "" {
-    global project "D:/2025-2028 UoM PhD Economics/2025-2026 Course work/Research Reading/Coding"
+    global project "`c(pwd)'"
     global raw     "$project/data/raw"
     global output  "$project/output"
 }
 
-* 1. 데이터 불러오기 (Raw 폴더에서 가져오기)
+* 1. 데이터 불러오기
 import excel "$raw/Tuition_Grant.xlsx", sheet("Sheet1") firstrow clear
 
 
@@ -85,13 +85,13 @@ graph export "$output/figures/Tuition_real_terms.png", replace
 cls
 clear all
 
-* [안전장치] 상위 경로가 설정되지 않았을 경우를 대비
+* 이미 상단이나 master.do에서 $raw를 설정했다면 아래 if문은 그냥 지나갑니다.
 if "$raw" == "" {
-    global project "D:/2025-2028 UoM PhD Economics/2025-2026 Course work/Research Reading/Coding"
+    global project "`c(pwd)'"
     global raw     "$project/data/raw"
 }
 
-* [수정] 표준 경로($raw)를 사용하여 Sheet4를 불러옵니다.
+* 표준 경로($raw)를 사용하여 Sheet4를 불러옵니다.
 import excel "$raw/Tuition_Grant.xlsx", sheet("Sheet4") firstrow clear
 
 /*Grant Trend*/
