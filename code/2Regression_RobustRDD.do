@@ -68,24 +68,24 @@ desc
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean /// 
 		if inrange(parent_income, 2, 5) & enter_year == 2012, robust
-	outreg2 using "tables/SharpRDD_LoA.doc", replace ctitle("2012")
-	outreg2 using "tables/SharpRDD.doc", replace ctitle("LoA")
+	outreg2 using "$tables/SharpRDD_LoA.doc", replace ctitle("2012")
+	outreg2 using "$tables/SharpRDD.doc", replace ctitle("LoA")
 
 	reg adjleave_sem elig_2012_3 runvar_2012 TR2012 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean /// 
 		if inrange(parent_income, 2, 5) & enter_year == 2012, robust	
-	outreg2 using "tables/SharpRDD_LoAsem.doc", replace ctitle("2012")
-	outreg2 using "tables/SharpRDD.doc", append ctitle("Semesters")
+	outreg2 using "$tables/SharpRDD_LoAsem.doc", replace ctitle("2012")
+	outreg2 using "$tables/SharpRDD.doc", append ctitle("Semesters")
 	
 	reg GPAZ elig_2012_3 runvar_2012 TR2012 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean /// 
 		if inrange(parent_income, 2, 5) & enter_year == 2012, robust
-	outreg2 using "tables/SharpRDD_GPA.doc", replace ctitle("2012")
-	outreg2 using "tables/SharpRDD.doc", append ctitle("GPA")
+	outreg2 using "$tables/SharpRDD_GPA.doc", replace ctitle("2012")
+	outreg2 using "$tables/SharpRDD.doc", append ctitle("GPA")
 	
 	
 	* diff bandwidth
@@ -94,21 +94,21 @@ desc
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean /// 
 		if inrange(parent_income, 3, 4) & enter_year == 2012, robust
-	outreg2 using "tables/SharpRDDdiffband.doc", replace ctitle("LoA")
+	outreg2 using "$tables/SharpRDDdiffband.doc", replace ctitle("LoA")
 
 	reg adjleave_sem elig_2012_3 runvar_2012 TR2012 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean /// 
 		if inrange(parent_income, 3, 4) & enter_year == 2012, robust	
-	outreg2 using "tables/SharpRDDdiffband.doc", append ctitle("Semesters")
+	outreg2 using "$tables/SharpRDDdiffband.doc", append ctitle("Semesters")
 	
 	reg GPAZ elig_2012_3 runvar_2012 TR2012 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean /// 
 		if inrange(parent_income, 3, 4) & enter_year == 2012, robust
-	outreg2 using "tables/SharpRDDdiffband.doc", append ctitle("GPA")
+	outreg2 using "$tables/SharpRDDdiffband.doc", append ctitle("GPA")
 	
 	
 
@@ -118,24 +118,24 @@ desc
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 5, 8) & enter_year == 2013, robust
-	outreg2 using "tables/SharpRDD_LoA.doc", append ctitle("2013")
-	outreg2 using "tables/SharpRDD.doc", append ctitle("LoA")
+	outreg2 using "$tables/SharpRDD_LoA.doc", append ctitle("2013")
+	outreg2 using "$tables/SharpRDD.doc", append ctitle("LoA")
 	
 	reg adjleave_sem elig_2013plus_456 runvar_2013 TR2013 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 5, 8) & enter_year == 2013, robust
-	outreg2 using "tables/SharpRDD_LoAsem.doc", append ctitle("2013")
-	outreg2 using "tables/SharpRDD.doc", append ctitle("Semesters")
+	outreg2 using "$tables/SharpRDD_LoAsem.doc", append ctitle("2013")
+	outreg2 using "$tables/SharpRDD.doc", append ctitle("Semesters")
 	
 	reg GPAZ elig_2013plus_456 runvar_2013 TR2013 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 5, 8) & enter_year == 2013, robust
-	outreg2 using "tables/SharpRDD_GPA.doc", append ctitle("2013")
-	outreg2 using "tables/SharpRDD.doc", append ctitle("GPA")
+	outreg2 using "$tables/SharpRDD_GPA.doc", append ctitle("2013")
+	outreg2 using "$tables/SharpRDD.doc", append ctitle("GPA")
 
 
 	* diff bandwidth
@@ -144,21 +144,21 @@ desc
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 6, 7) & enter_year == 2013, robust
-	outreg2 using "tables/SharpRDDdiffband.doc", append ctitle("LoA")
+	outreg2 using "$tables/SharpRDDdiffband.doc", append ctitle("LoA")
 	
 	reg adjleave_sem elig_2013plus_456 runvar_2013 TR2013 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 6, 7) & enter_year == 2013, robust
-	outreg2 using "tables/SharpRDDdiffband.doc", append ctitle("Semesters")
+	outreg2 using "$tables/SharpRDDdiffband.doc", append ctitle("Semesters")
 	
 	reg GPAZ elig_2013plus_456 runvar_2013 TR2013 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 6, 7) & enter_year == 2013, robust
-	outreg2 using "tables/SharpRDDdiffband.doc", append ctitle("GPA")	
+	outreg2 using "$tables/SharpRDDdiffband.doc", append ctitle("GPA")	
 	
 	
 * 2015 cutoff
@@ -167,15 +167,15 @@ desc
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 6, 8) & enter_year == 2015, robust
-	outreg2 using "tables/SharpRDD_LoA.doc", append ctitle("2015")	
-	outreg2 using "tables/SharpRDD.doc", append ctitle("LoA")
+	outreg2 using "$tables/SharpRDD_LoA.doc", append ctitle("2015")	
+	outreg2 using "$tables/SharpRDD.doc", append ctitle("LoA")
 	
 	reg adjleave_sem elig_2015plus_7 runvar_2015 TR2015 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 6, 8) & enter_year == 2015, robust	
-	outreg2 using "tables/SharpRDD_LoAsem.doc", append ctitle("2015")
+	outreg2 using "$tables/SharpRDD_LoAsem.doc", append ctitle("2015")
 	outreg2 using "tables/SharpRDD.doc", append ctitle("Semesters")
 	
 	reg GPAZ elig_2015plus_7 runvar_2015 TR2015 ///
@@ -183,8 +183,8 @@ desc
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 6, 8) & enter_year == 2015, robust
-	outreg2 using "tables/SharpRDD_GPA.doc", append ctitle("2015")
-	outreg2 using "tables/SharpRDD.doc", append ctitle("GPA")
+	outreg2 using "$tables/SharpRDD_GPA.doc", append ctitle("2015")
+	outreg2 using "$tables/SharpRDD.doc", append ctitle("GPA")
 
 	* diff bandwidth	
 	reg adjleave_school elig_2015plus_7 runvar_2015 TR2015 ///
@@ -192,21 +192,21 @@ desc
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 7, 8) & enter_year == 2015, robust	
-	outreg2 using "tables/SharpRDDdiffband.doc", append ctitle("LoA")
+	outreg2 using "$tables/SharpRDDdiffband.doc", append ctitle("LoA")
 	
 	reg adjleave_sem elig_2015plus_7 runvar_2015 TR2015 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 7, 8) & enter_year == 2015, robust	
-	outreg2 using "tables/SharpRDDdiffband.doc", append ctitle("Semesters")
+	outreg2 using "$ables/SharpRDDdiffband.doc", append ctitle("Semesters")
 	
 	reg GPAZ elig_2015plus_7 runvar_2015 TR2015 ///
 		gender ///
 		academicparents ///
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 7, 8) & enter_year == 2015, robust
-	outreg2 using "tables/SharpRDDdiffband.doc", append ctitle("GPA")	
+	outreg2 using "$tables/SharpRDDdiffband.doc", append ctitle("GPA")	
 	
 //Print Result
 	shellout using "$tables/SharpRDD_LoA.doc"

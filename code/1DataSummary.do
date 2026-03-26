@@ -137,23 +137,6 @@ graph bar (count) if parent_income > -1 ///
 	gen pre3 = inlist(enter_year, 2009, 2010, 2011)
 	gen post3 = inlist(enter_year, 2013, 2014, 2015)
 	
-	gen pre1 = inlist(enter_year, 2011, 2012)
-	gen post1 = inlist(enter_year, 2012, 2013)
-	gen pre2 = inlist(enter_year, 2012, 2013)
-	gen post2 = inlist(enter_year, 2013, 2014)
-	gen pre3 = inlist(enter_year, 2014, 2015)
-	gen post3 = inlist(enter_year, 2015, 2016)	
-	
-* for checking observation number	
-	gen pre1 = inlist(enter_year, 2011)
-	gen post1 = inlist(enter_year, 2013)
-	gen pre2 = inlist(enter_year, 2012)
-	gen post2 = inlist(enter_year, 2014)
-	gen pre3 = inlist(enter_year, 2014)
-	gen post3 = inlist(enter_year, 2016)	
-	
-	
-	
 	gen group1 = .
 	replace group1 = 0 if pre1 == 1
 	replace group1 = 1 if post1 == 1
@@ -167,8 +150,6 @@ graph bar (count) if parent_income > -1 ///
 	ttest real_income_mid if group1 < . & parent_income > -1, by(group1)
 	ttest real_income_mid if group2 < . & parent_income > -1, by(group2)
 	ttest real_income_mid if group3 < . & parent_income > -1, by(group3)
-	
-	
 
 
 //-----------------------------------------------------------------//
