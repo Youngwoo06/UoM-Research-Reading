@@ -176,7 +176,7 @@ desc
 		academic uni_found seoul seoul_metro area_matching i.hsarea_clean ///  
 		if inrange(parent_income, 6, 8) & enter_year == 2015, robust	
 	outreg2 using "$tables/SharpRDD_LoAsem.doc", append ctitle("2015")
-	outreg2 using "tables/SharpRDD.doc", append ctitle("Semesters")
+	outreg2 using "$tables/SharpRDD.doc", append ctitle("Semesters")
 	
 	reg GPAZ elig_2015plus_7 runvar_2015 TR2015 ///
 		gender ///
@@ -208,16 +208,7 @@ desc
 		if inrange(parent_income, 7, 8) & enter_year == 2015, robust
 	outreg2 using "$tables/SharpRDDdiffband.doc", append ctitle("GPA")	
 	
-//Print Result
-	shellout using "$tables/SharpRDD_LoA.doc"
-	shellout using "$tables/SharpRDD_LoAsem.doc"
-	shellout using "$tables/SharpRDD_GPA.doc"
-	shellout using "$tables/SharpRDD.doc"
-		
-
 //Plotting Graph		
-ssc install rdrobust, replace
-
 * LoA (Leave of Absence)
 * ===== 2012 cutoff =====		
 rdplot adjleave_school parent_income if enter_year==2012 & parent_income >=2 & parent_income <=5, ///

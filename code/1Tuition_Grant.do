@@ -19,7 +19,7 @@ twoway ///
 	xline(2011) ///
 	ytitle(`"Tuition Increase Cap (%)"') xtitle(`"Year"')
 
-graph export "$output/figures/Tuition_Increase_Cap.png", replace
+graph export "$figures/Tuition_Increase_Cap.png", replace
 // --------------------------------------------------------- //
 
 // Tutition //
@@ -45,7 +45,7 @@ twoway ///
 	ytitle("Tuition (in million KRW, nominal terms)") xtitle("Year") ///
 	xlabel(2009(2)2025)
 
-graph export "$output/figures/Tuition_nominal_terms.png", replace	
+graph export "$figures/Tuition_nominal_terms.png", replace	
 
 
 /*Tuition in Real Terms*/
@@ -77,7 +77,7 @@ twoway ///
 	ytitle("Tuition (in million KRW, real terms)") xtitle("Year") ///
 	xlabel(2009(2)2025)
 	
-graph export "$output/figures/Tuition_real_terms.png", replace	
+graph export "$figures/Tuition_real_terms.png", replace	
 
 // --------------------------------------------------------- //
 
@@ -116,7 +116,7 @@ twoway ///
 	label(5 Future-Dream) label(6 Hope-Dream)) ///
 	ytitle(`"Grants (in trillion KRW, nominal terms)"') xtitle(`"Year"') ///
 	xlabel(2009(1)2019)
-	graph export "$output/figures/Grants_nominal_terms.png", replace	
+	graph export "$figures/Grants_nominal_terms.png", replace	
 	
 	
 * Real Terms	
@@ -139,4 +139,4 @@ twoway ///
 	label(5 Future-Dream) label(6 Hope-Dream)) ///
 	ytitle(`"Grants (in trillion KRW, real terms)"') xtitle(`"Year"') ///
 	xlabel(2009(1)2019)	
-	graph export "$output/figures/Grants_real_terms.png", replace	
+	graph export "$figures/Grants_real_terms.png", replace	

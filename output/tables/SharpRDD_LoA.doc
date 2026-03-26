@@ -1,0 +1,82 @@
+{\rtf1\fs24
+\trowd\trgaph75\trleft-75\intbl\trqc\clbrdrt\brdrs\cellx2592\clbrdrt\brdrs\cellx4176\clbrdrt\brdrs\cellx5616\clbrdrt\brdrs\cellx7200
+\ql \cell\qc (1)\cell\qc (2)\cell\qc (3)\cell\row
+\trowd\trgaph75\trleft-75\trqc\cellx2592\cellx4176\cellx5616\cellx7200
+\trowd\trgaph75\trleft-75\trqc\clbrdrb\brdrs\cellx2592\clbrdrb\brdrs\cellx4176\clbrdrb\brdrs\cellx5616\clbrdrb\brdrs\cellx7200
+\ql VARIABLES\cell\qc 2012\cell\qc 2013\cell\qc 2015\cell\row
+\trowd\trgaph75\trleft-75\trqc\cellx2592\cellx4176\cellx5616\cellx7200
+\ql \cell\qc \cell\qc \cell\qc \cell\row
+\ql elig_2012_3\cell\qc -0.0143\cell\qc \cell\qc \cell\row
+\ql \cell\qc (0.0196)\cell\qc \cell\qc \cell\row
+\ql runvar_2012\cell\qc -0.0210*\cell\qc \cell\qc \cell\row
+\ql \cell\qc (0.0108)\cell\qc \cell\qc \cell\row
+\ql TR2012\cell\qc 0.0140\cell\qc \cell\qc \cell\row
+\ql \cell\qc (0.0193)\cell\qc \cell\qc \cell\row
+\ql gender\cell\qc 0.0318***\cell\qc 0.175***\cell\qc 0.00152\cell\row
+\ql \cell\qc (0.00891)\cell\qc (0.0106)\cell\qc (0.0135)\cell\row
+\ql academicparents\cell\qc 0.00477\cell\qc -0.000335\cell\qc 0.00579\cell\row
+\ql \cell\qc (0.00945)\cell\qc (0.0116)\cell\qc (0.0120)\cell\row
+\ql academic\cell\qc 0.214***\cell\qc 0.0805***\cell\qc -0.0258*\cell\row
+\ql \cell\qc (0.00979)\cell\qc (0.0136)\cell\qc (0.0140)\cell\row
+\ql uni_found\cell\qc -0.00705\cell\qc 0.0220\cell\qc -0.000673\cell\row
+\ql \cell\qc (0.0123)\cell\qc (0.0139)\cell\qc (0.0124)\cell\row
+\ql seoul\cell\qc 0.135***\cell\qc 0.147***\cell\qc 0.0271\cell\row
+\ql \cell\qc (0.0145)\cell\qc (0.0166)\cell\qc (0.0201)\cell\row
+\ql seoul_metro\cell\qc 0.0396***\cell\qc 0.0712***\cell\qc 0.0117\cell\row
+\ql \cell\qc (0.0131)\cell\qc (0.0170)\cell\qc (0.0179)\cell\row
+\ql area_matching\cell\qc 0.0302***\cell\qc 0.00549\cell\qc 0.0150\cell\row
+\ql \cell\qc (0.00912)\cell\qc (0.0116)\cell\qc (0.0119)\cell\row
+\ql 2.hsarea_clean\cell\qc 0.0346\cell\qc 0.0275\cell\qc 0.000561\cell\row
+\ql \cell\qc (0.0212)\cell\qc (0.0267)\cell\qc (0.0323)\cell\row
+\ql 3.hsarea_clean\cell\qc 0.0656***\cell\qc 0.0955***\cell\qc -0.00619\cell\row
+\ql \cell\qc (0.0232)\cell\qc (0.0291)\cell\qc (0.0329)\cell\row
+\ql 4.hsarea_clean\cell\qc 0.00969\cell\qc -0.00635\cell\qc -0.0398\cell\row
+\ql \cell\qc (0.0267)\cell\qc (0.0315)\cell\qc (0.0277)\cell\row
+\ql 5.hsarea_clean\cell\qc 0.0214\cell\qc 0.0392\cell\qc 0.0182\cell\row
+\ql \cell\qc (0.0218)\cell\qc (0.0298)\cell\qc (0.0421)\cell\row
+\ql 6.hsarea_clean\cell\qc -0.00180\cell\qc -0.0562*\cell\qc -0.0356\cell\row
+\ql \cell\qc (0.0262)\cell\qc (0.0297)\cell\qc (0.0296)\cell\row
+\ql 7.hsarea_clean\cell\qc 0.0901***\cell\qc 0.0795**\cell\qc -0.0105\cell\row
+\ql \cell\qc (0.0309)\cell\qc (0.0352)\cell\qc (0.0331)\cell\row
+\ql 8.hsarea_clean\cell\qc 0.00613\cell\qc -0.00194\cell\qc -0.00962\cell\row
+\ql \cell\qc (0.0147)\cell\qc (0.0180)\cell\qc (0.0218)\cell\row
+\ql 9.hsarea_clean\cell\qc -0.0849***\cell\qc -0.0613*\cell\qc -0.0309\cell\row
+\ql \cell\qc (0.0275)\cell\qc (0.0324)\cell\qc (0.0325)\cell\row
+\ql 10.hsarea_clean\cell\qc -0.0202\cell\qc -0.0307\cell\qc 0.00560\cell\row
+\ql \cell\qc (0.0265)\cell\qc (0.0316)\cell\qc (0.0381)\cell\row
+\ql 11.hsarea_clean\cell\qc 0.0160\cell\qc 0.00761\cell\qc -0.0623***\cell\row
+\ql \cell\qc (0.0264)\cell\qc (0.0326)\cell\qc (0.0201)\cell\row
+\ql 12.hsarea_clean\cell\qc -0.0762***\cell\qc -0.0547*\cell\qc -0.0221\cell\row
+\ql \cell\qc (0.0244)\cell\qc (0.0289)\cell\qc (0.0309)\cell\row
+\ql 13.hsarea_clean\cell\qc -0.0341\cell\qc 0.0139\cell\qc -0.0635***\cell\row
+\ql \cell\qc (0.0235)\cell\qc (0.0331)\cell\qc (0.0208)\cell\row
+\ql 14.hsarea_clean\cell\qc -0.0121\cell\qc 0.0108\cell\qc -0.0587***\cell\row
+\ql \cell\qc (0.0219)\cell\qc (0.0290)\cell\qc (0.0212)\cell\row
+\ql 15.hsarea_clean\cell\qc 0.0424**\cell\qc 0.0344\cell\qc -0.0126\cell\row
+\ql \cell\qc (0.0214)\cell\qc (0.0255)\cell\qc (0.0288)\cell\row
+\ql 16.hsarea_clean\cell\qc 0.0236\cell\qc 0.00265\cell\qc -0.0640***\cell\row
+\ql \cell\qc (0.0390)\cell\qc (0.0545)\cell\qc (0.0214)\cell\row
+\ql 17.hsarea_clean\cell\qc -0.0187\cell\qc 0.171\cell\qc -0.0605**\cell\row
+\ql \cell\qc (0.165)\cell\qc (0.195)\cell\qc (0.0235)\cell\row
+\ql elig_2013plus_456\cell\qc \cell\qc 0.0138\cell\qc \cell\row
+\ql \cell\qc \cell\qc (0.0269)\cell\qc \cell\row
+\ql runvar_2013\cell\qc \cell\qc 0.0189\cell\qc \cell\row
+\ql \cell\qc \cell\qc (0.0215)\cell\qc \cell\row
+\ql TR2013\cell\qc \cell\qc -0.00840\cell\qc \cell\row
+\ql \cell\qc \cell\qc (0.0251)\cell\qc \cell\row
+\ql elig_2015plus_7\cell\qc \cell\qc \cell\qc 0.00927\cell\row
+\ql \cell\qc \cell\qc \cell\qc (0.0262)\cell\row
+\ql runvar_2015\cell\qc \cell\qc \cell\qc 0.00160\cell\row
+\ql \cell\qc \cell\qc \cell\qc (0.0136)\cell\row
+\ql o.TR2015\cell\qc \cell\qc \cell\qc -\cell\row
+\ql \cell\qc \cell\qc \cell\qc \cell\row
+\ql Constant\cell\qc 0.119***\cell\qc 0.0330\cell\qc 0.0571**\cell\row
+\ql \cell\qc (0.0238)\cell\qc (0.0345)\cell\qc (0.0264)\cell\row
+\ql \cell\qc \cell\qc \cell\qc \cell\row
+\ql Observations\cell\qc 10,493\cell\qc 6,379\cell\qc 1,586\cell\row
+\trowd\trgaph75\trleft-75\trqc\trbrdrb\brdrs\clbrdrb\brdrs\cellx2592\clbrdrb\brdrs\cellx4176\clbrdrb\brdrs\cellx5616\clbrdrb\brdrs\cellx7200
+\ql R-squared\cell\qc 0.068\cell\qc 0.073\cell\qc 0.020\cell\row
+\pard\qc
+Robust standard errors in parentheses\par
+*** p<0.01, ** p<0.05, * p<0.1\par
+}

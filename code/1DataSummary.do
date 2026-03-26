@@ -35,7 +35,7 @@ by gender : sum adjleave_school adjleave_sem
 	graph bar (mean) scholarship if inrange(enter_year, 2008, 2018), ///
 		over(enter_year) ///
 		bar(1, color(navy)) 
-	graph export "$output/figures/Scholarship_receipt_by_entrance_year.png", replace	
+	graph export "$figures/Scholarship_receipt_by_entrance_year.png", replace	
 		
 	/*New Standard for scholarship receipt*/	
 	gen new_scholarshipstandard = 0
@@ -78,7 +78,7 @@ by gender : sum adjleave_school adjleave_sem
 	twoway (bar eligible enter_year, barwidth(0.6) color(navy)), ///
 		xline(2012) ///
 		text(1.05 2012 "KNSP implemented")
-	graph export "$output/figures/KNSP_Eligibility.png", replace
+	graph export "$figures/KNSP_Eligibility.png", replace
 		
 	graph bar (mean) eligible ///
 		if inrange(enter_year, 2008, 2018), ///
@@ -125,7 +125,7 @@ graph bar (count) if parent_income > -1 ///
 	over(parent_income) ///
 	over(enter_year) ///
 	bar(1, color(navy))
-	graph export "$output/figures/parent_income.png", replace	
+	graph export "$figures/parent_income.png", replace	
 	
 	
 //Exogenity	

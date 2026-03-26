@@ -1,6 +1,7 @@
 * ==========================================================
 * Project: UoM Research Reading (Robust Path Version)
 * ==========================================================
+cls
 clear all
 
 local current_dir "`c(pwd)'"
